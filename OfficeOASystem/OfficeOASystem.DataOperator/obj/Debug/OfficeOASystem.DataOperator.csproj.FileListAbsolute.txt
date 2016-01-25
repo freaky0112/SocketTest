@@ -1,0 +1,11 @@
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\obj\Debug\OfficeOASystem.DataOperator.csprojResolveAssemblyReference.cache
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\bin\Debug\OfficeOASystem.DataOperator.dll.config
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\bin\Debug\OfficeOASystem.DataOperator.dll
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\bin\Debug\OfficeOASystem.DataOperator.pdb
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\bin\Debug\MySql.Data.dll
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\obj\Debug\OfficeOASystem.DataOperator.dll
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\obj\Debug\OfficeOASystem.DataOperator.pdb
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\bin\Debug\OfficeOASystem.Common.dll
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\bin\Debug\OfficeOASystem.Common.pdb
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\bin\Debug\Renci.SshNet.dll
+E:\Workgroup\OfficeOASystem\OfficeOASystem.DataOperator\bin\Debug\Renci.SshNet.xml

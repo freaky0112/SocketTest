@@ -1,0 +1,17 @@
+﻿<Window x:Class="ClientTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ListBox x:Name="lbxRecord" Margin="0,0,0,54"></ListBox>
+        <Grid  Margin="0,0,0,0" VerticalAlignment="Bottom" Height="54" >
+            <TextBox x:Name="tbxStr" Margin="0,0,110,0"/>
+            <Button x:Name="btnSend" Content="发送"  HorizontalAlignment="Right" Width="50" Click="btnSend_Click" ></Button>
+            <Button x:Name="btnSendFile" Content="发送文件"  HorizontalAlignment="Right" Width="60" Margin="0,0,50,0" ></Button>
+        </Grid>
+    </Grid>
+</Window>

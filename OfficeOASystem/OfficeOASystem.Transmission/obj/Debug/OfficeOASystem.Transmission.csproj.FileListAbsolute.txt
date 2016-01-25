@@ -1,0 +1,9 @@
+E:\Workgroup\OfficeOASystem\OfficeOASystem.Transmission\bin\Debug\OfficeOASystem.Transmission.dll
+E:\Workgroup\OfficeOASystem\OfficeOASystem.Transmission\bin\Debug\OfficeOASystem.Transmission.pdb
+E:\Workgroup\OfficeOASystem\OfficeOASystem.Transmission\obj\Debug\OfficeOASystem.Transmission.csprojResolveAssemblyReference.cache
+E:\Workgroup\OfficeOASystem\OfficeOASystem.Transmission\obj\Debug\OfficeOASystem.Transmission.dll
+E:\Workgroup\OfficeOASystem\OfficeOASystem.Transmission\obj\Debug\OfficeOASystem.Transmission.pdb
+E:\Workgroup\OfficeOASystem\OfficeOASystem.Transmission\bin\Debug\OfficeOASystem.Common.dll
+E:\Workgroup\OfficeOASystem\OfficeOASystem.Transmission\bin\Debug\Renci.SshNet.dll
+E:\Workgroup\OfficeOASystem\OfficeOASystem.Transmission\bin\Debug\OfficeOASystem.Common.pdb
+E:\Workgroup\OfficeOASystem\OfficeOASystem.Transmission\bin\Debug\Renci.SshNet.xml

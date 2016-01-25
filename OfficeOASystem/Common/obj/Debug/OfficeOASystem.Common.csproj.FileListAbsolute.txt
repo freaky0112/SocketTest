@@ -1,0 +1,7 @@
+E:\Workgroup\OfficeOASystem\Common\obj\Debug\OfficeOASystem.Common.csprojResolveAssemblyReference.cache
+E:\Workgroup\OfficeOASystem\Common\bin\Debug\Renci.SshNet.dll
+E:\Workgroup\OfficeOASystem\Common\bin\Debug\Renci.SshNet.xml
+E:\Workgroup\OfficeOASystem\Common\bin\Debug\OfficeOASystem.Common.dll
+E:\Workgroup\OfficeOASystem\Common\bin\Debug\OfficeOASystem.Common.pdb
+E:\Workgroup\OfficeOASystem\Common\obj\Debug\OfficeOASystem.Common.dll
+E:\Workgroup\OfficeOASystem\Common\obj\Debug\OfficeOASystem.Common.pdb

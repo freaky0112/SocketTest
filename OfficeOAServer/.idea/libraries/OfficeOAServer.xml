@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="OfficeOAServer">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/OfficeOAServer_jar/OfficeOAServer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
