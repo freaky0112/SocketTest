@@ -1,19 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ClientTest {
     /// <summary>
@@ -21,17 +11,22 @@ namespace ClientTest {
     /// </summary>
     public partial class MainWindow : Window {
 
+        private Thread thread;
+
         private static Socket client;
         public MainWindow() {
             InitializeComponent();
-            string msg;
+            //string msg;
             //Socket socket = socketInit();
-            client = socketInit();
-            msg = client.Connected ? "连接成功" : "连接失败";
-            lbxRecord.Items.Add(msg);
+            thread = new Thread(socketChecked);
+            thread.Start();
+            //client = socketInit();
+            //msg = client.Connected ? "连接成功" : "连接失败";
+            //lbxRecord.Items.Add(msg);
         }
 
         private Socket socketInit() {
+
             int port = 8081;
             string host = "127.0.0.1";
             IPAddress ip = IPAddress.Parse(host);
@@ -63,5 +58,28 @@ namespace ClientTest {
             socket.Connect(ipe);
             return socket.Connected;
         }
+
+        private void socketChecked() {
+            while (true) {
+                if (!client.Connected) {
+                    client = socketInit();
+                    string msg;
+                    msg = client.Connected ? "连接成功" : "连接失败";
+                    lbxRecord.Items.Add(msg);
+                } else {
+
+                }
+           }
+        }
+
+        private event EventHandler OnConnected;
+        private void RaseieConnectedEvent() {
+            if (OnConnected == null) {
+
+            } else {
+                OnConnected(this, new EventArgs());
+            }
+        }
+        
     }
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Workgroup\SocketTest\ClientTest\ClientTest\obj\Debug\
+D:\workspace\SocketTest\ClientTest\ClientTest\obj\Debug\
 ClientTest
 none
 false
 DEBUG;TRACE
-E:\Workgroup\SocketTest\ClientTest\ClientTest\App.xaml
+D:\workspace\SocketTest\ClientTest\ClientTest\App.xaml
 11151548125
 
-91824039261
-13-1643599102
+101305350307
+13738642453
 MainWindow.xaml;
 
-True
+False
 
