@@ -14,15 +14,25 @@ namespace ClientTest {
         private Thread thread;
 
         private static Socket client;
+
+        private static SocketHelper sh;
         public MainWindow() {
             InitializeComponent();
             //string msg;
             //Socket socket = socketInit();
-            thread = new Thread(socketChecked);
-            thread.Start();
+            //thread = new Thread(socketChecked);
+            //thread.Start();
+            sh = new SocketHelper(8081, "127.0.0.1");
+            sh.MsgRecived +=this. OnMsgRecived;
+            sh.Begin();
+            
             //client = socketInit();
             //msg = client.Connected ? "连接成功" : "连接失败";
             //lbxRecord.Items.Add(msg);
+        }
+
+        private void OnMsgRecived(string msg) {
+
         }
 
         private Socket socketInit() {
@@ -40,13 +50,17 @@ namespace ClientTest {
         private void btnSend_Click(object sender, RoutedEventArgs e) {
             string msg = tbxStr.Text;
             lbxRecord.Items.Add(msg);
-            //Socket socket = socketInit();
-            byte[] bs = Encoding.UTF8.GetBytes(msg + "\n");
-            if (!client.Connected) {
-                    client = socketInit();
-                    
+            if (!sh.SocketState) {
+                sh.Begin();
             }
-            client.Send(bs, bs.Length, 0);
+            sh.SendMsg(msg);
+            //Socket socket = socketInit();
+            //byte[] bs = Encoding.UTF8.GetBytes(msg + "\n");
+            //if (!client.Connected) {
+            //        client = socketInit();
+                    
+            //}
+            //client.Send(bs, bs.Length, 0);
         }
 
         private bool socketConnect() {

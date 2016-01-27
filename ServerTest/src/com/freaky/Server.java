@@ -29,6 +29,7 @@ public class Server {
     private class HandlerThread implements Runnable {
         private Socket socket;
         private BufferedReader in;
+        private PrintWriter out;
         public HandlerThread(Socket socket) {
             this.socket = socket;
             new Thread(this).start();
@@ -42,7 +43,10 @@ public class Server {
 //                DataOutputStream output=new DataOutputStream(socket.getOutputStream());
                 while(socket.isConnected() ) {
                     in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                    System.out.println("client says:" + in.readLine());
+                    String msg="client says:" + in.readLine();
+                    System.out.println(msg);
+                    out=new PrintWriter(socket.getOutputStream(),true);
+                    out.println(msg.replace("\n",""));
                 }
 
             } catch (Exception ex) {
