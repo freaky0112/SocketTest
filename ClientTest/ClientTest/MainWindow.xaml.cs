@@ -11,28 +11,33 @@ namespace ClientTest {
     /// </summary>
     public partial class MainWindow : Window {
 
-        private Thread thread;
+        //private Thread thread;
 
         private static Socket client;
 
         private static SocketHelper sh;
         public MainWindow() {
             InitializeComponent();
-            //string msg;
+            string msg;
             //Socket socket = socketInit();
             //thread = new Thread(socketChecked);
             //thread.Start();
             sh = new SocketHelper(8081, "127.0.0.1");
-            sh.MsgRecived +=this. OnMsgRecived;
-            sh.Begin();
-            
+            sh.MsgRecived += this.OnMsgRecived;
+
+            msg = sh.Begin() ? "连接成功" : "连接失败";
+
             //client = socketInit();
             //msg = client.Connected ? "连接成功" : "连接失败";
-            //lbxRecord.Items.Add(msg);
+            lbxRecord.Items.Add(msg);
         }
 
         private void OnMsgRecived(string msg) {
-
+            string text = msg;
+            msg= msg.Replace("\r\n", "");
+            DelegateListBox lbx = new DelegateListBox(lbxRecord);
+            lbx.addItem(msg);
+            //lbxRecord.Items.Add(text);
         }
 
         private Socket socketInit() {
@@ -58,7 +63,7 @@ namespace ClientTest {
             //byte[] bs = Encoding.UTF8.GetBytes(msg + "\n");
             //if (!client.Connected) {
             //        client = socketInit();
-                    
+
             //}
             //client.Send(bs, bs.Length, 0);
         }
@@ -83,7 +88,7 @@ namespace ClientTest {
                 } else {
 
                 }
-           }
+            }
         }
 
         private event EventHandler OnConnected;
@@ -94,6 +99,9 @@ namespace ClientTest {
                 OnConnected(this, new EventArgs());
             }
         }
-        
+
+        private void Window_Closed(object sender, EventArgs e) {
+            sh.Close();
+        }
     }
 }

@@ -22,7 +22,7 @@ public class Server {
                 new HandlerThread(socket);
             }
         } catch (Exception ex) {
-            System.out.print("Server error {0}"+ ex.getMessage());
+            System.out.print("Server error {0}" + ex.getMessage());
         }
     }
 
@@ -30,6 +30,7 @@ public class Server {
         private Socket socket;
         private BufferedReader in;
         private PrintWriter out;
+
         public HandlerThread(Socket socket) {
             this.socket = socket;
             new Thread(this).start();
@@ -37,25 +38,30 @@ public class Server {
 
         public void run() {
             try {
-                System.out.printf("Get a new connect by "+socket.getInetAddress()+"\n");
+                System.out.println("Get a new connect by " + socket.getLocalSocketAddress() );
 //                DataInputStream input = new DataInputStream(socket.getInputStream());
 //                String clinetInputStr=input.readUTF();
 //                DataOutputStream output=new DataOutputStream(socket.getOutputStream());
-                while(socket.isConnected() ) {
+                while (socket.isConnected()) {
                     in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                    String msg="client says:" + in.readLine();
-                    System.out.println(msg);
-                    out=new PrintWriter(socket.getOutputStream(),true);
-                    out.println(msg.replace("\n",""));
+                    String msg = in.readLine();
+                    if (!msg.isEmpty()) {
+                        System.out.println("client says:" + msg);
+                    }
+                    if (msg.equals("finish")) {
+                        break;
+                    }
+                    out = new PrintWriter(socket.getOutputStream(), true);
+                    System.out.print(msg);
+                    msg = msg.replace("\n", "");
+                    out.println(msg);
                 }
 
             } catch (Exception ex) {
-                System.out.print("Server run error "+ex.getMessage()+"\n");
-            }finally {
+                System.out.println("Server run error " + ex.getMessage());
+            } finally {
                 try {
-                    if (in.readLine().equals("finish")){
-                        socket.close();
-                    }
+                    socket.close();
                 } catch (IOException e) {
                     //e.printStackTrace();
                 }
